@@ -2,7 +2,7 @@ import { checkForName } from "../src/client/js/nameChecker";
 
 describe("Includes Names in list", () => {
     test("should return true", () => {
-      const input = "Picard";
+      const input = "https://www.google.com/sheets/about/";
       expect(checkForName(input)).toBe(true);
     });
     test("should return false", () => {

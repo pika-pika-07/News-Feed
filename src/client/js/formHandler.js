@@ -4,18 +4,17 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    checkForName(formText)
+    if( checkForName(formText) ){
+        runApi("http://localhost:8081/submit1",formText)
+        .then((result) => {
+            updateUI(result)
+        })
+    }
+    else{
+        alert("Not Possible")
+    }
 
-    console.log("OOOOOOOOOOOo")
-    // fetch('http://localhost:8080/test')
-    // .then(res => res.json())
-    // .then(function(res) {
-    //     document.getElementById('results').innerHTML = res.message
-    // })
-    runApi("http://localhost:8081/submit1",formText)
-    .then((result) => {
-        updateUI(result)
-    })
+  
 
    
 }

@@ -8,12 +8,29 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client',
+        path: path.resolve(__dirname, 'dist'),
+        //filename: 'main.js',
+        publicPath: '/'
+    },
+    devServer: {
+        
+        compress: true,
+       // port: 9000,
+        historyApiFallback: true,
+      },
     module: {
         rules: [
             {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                test: /.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
     },

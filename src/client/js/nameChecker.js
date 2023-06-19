@@ -1,8 +1,6 @@
-function checkForName(inputText) {
-    const expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-    const regex = new RegExp(expression);
-    var url = inputText;
-    if (regex.test(inputText) === true) {
+function checkForName(inputURl) {
+    const regex = new RegExp(/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi);
+    if (regex.test(inputURl) === true) {
         return true
     } else {
         return false

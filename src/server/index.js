@@ -38,7 +38,7 @@ app.post('/submit1', postAPIData)
 async function postAPIData(request,response) {
 
     const formdata = new FormData();
-    formdata.append("key", "faeb3a5e8a0a3ce2a620fd964d308f12");
+    formdata.append("key", apiKey);
     formdata.append("txt", "YOUR TEXT HERE");
     formdata.append("lang", "auto");
     
@@ -50,14 +50,13 @@ async function postAPIData(request,response) {
       };
     
     const formData = request.body.formText
-    
-    let key = 'faeb3a5e8a0a3ce2a620fd964d308f12'
+
     let url = `https://api.meaningcloud.com/sentiment-2.1`;
     const api_data = await fetch(url,requestOptions);
-    console.log(`Raw data from MeaningCloud: ${api_data}`);
+  
     try {
       const api_data_json = await api_data.json();
-      console.log("Got it",api_data_json);
+     
       response.send(api_data_json)
       
     } catch (error) {

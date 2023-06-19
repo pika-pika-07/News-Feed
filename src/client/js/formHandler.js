@@ -42,14 +42,12 @@ const runApi = async (url,formText) => {
 const updateUI = async (result) => {
     console.log("Result is",result)
     document.getElementById("subjectivity").innerHTML = `Subjectivity: ${result.subjectivity}`;
-    
+    document.getElementById("confidence").innerHTML = `Confidence ${result.confidence}`;
     document.getElementById("agreement").innerHTML = `Agreement: ${result.agreement}`;
-    
     document.getElementById("irony").innerHTML = `Irony: ${result.irony}`;
-    
     document.getElementById("score_tag").innerHTML = `Score Tag ${result.score_tag}`;
     
-    document.getElementById("confidence").innerHTML = `Confidence ${result.confidence}`;
+  
     
 }
 
